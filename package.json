@@ -1,0 +1,30 @@
+{
+  "name": "u_egg_db_base",
+  "version": "1.0.0",
+  "description": "Egg RESTfulAPI base",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomasLiu/u_egg_db_base.git"
+  },
+  "keywords": [
+    "Egg",
+    "RESTfulAPI",
+    "base"
+  ],
+  "author": "Thomas Lau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThomasLiu/u_egg_db_base/issues"
+  },
+  "homepage": "https://github.com/ThomasLiu/u_egg_db_base#readme",
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "babel-register": "^6.26.0",
+    "co-mocha": "^1.2.2",
+    "eslint": "^5.9.0"
+  }
+}
