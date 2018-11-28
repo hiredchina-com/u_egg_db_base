@@ -1,6 +1,6 @@
 {
   "name": "u_egg_db_base",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Egg RESTfulAPI base",
   "main": "index.js",
   "scripts": {
@@ -26,5 +26,8 @@
     "babel-register": "^6.26.0",
     "co-mocha": "^1.2.2",
     "eslint": "^5.9.0"
+  },
+  "dependencies": {
+    "egg": "^2.14.1"
   }
 }
