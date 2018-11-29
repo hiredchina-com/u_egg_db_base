@@ -36,21 +36,23 @@ middleware: {
 + verify401(token, secret)
 
 调用
-
-```/app/service/actionToken.js
+`/app/service/actionToken.js`
+```
 const { service: { ActionToken } } = require('u_egg_db_base');
 module.exports = ActionToken;
 ```
 
-需要配置
-```/config/config.default.js
+需要配置   
+`/config/config.default.js`
+```
 config.jwt = {
   secret: config.keys,
   enable: true, // default is false
   match: '/jwt', // optional
 };
 ```
-```/config/plugin.js
+`/config/plugin.js`
+```
 exports.jwt = {
   enable: true,
   package: 'egg-jwt',
@@ -63,14 +65,15 @@ exports.jwt = {
 + async del(key) 
 
 调用
-
-```/app/service/cache.js
+`/app/service/cache.js`
+```
 const { service: { ActionToken } } = require('u_egg_db_base');
 module.exports = ActionToken;
 ```
 
-需要配置
-```/config/config.default.js
+需要配置  
+`/config/config.default.js`
+```
 config.redis = {
   client: {
     host: process.env.EGG_REDIS_HOST || '127.0.0.1',
@@ -80,7 +83,8 @@ config.redis = {
   },
 };
 ```
-```/config/plugin.js
+`/config/plugin.js`
+```
 exports.redis = {
   enable: true,
   package: 'egg-redis',
@@ -99,8 +103,8 @@ exports.redis = {
 + getData(result)
 
 调用
-
-```/app/service/ActionToken.js
+`/app/service/ActionToken.js`
+```
 'use strict';
 const { service: { ApiService } } = require('u_egg_db_base');
 class EmailService extends ApiService {
@@ -116,18 +120,21 @@ module.exports = EmailService;
 
 #### middleware 调用
 ErrorHandler
-```/app/middleware/error_handler.js
+`/app/middleware/error_handler.js`
+```
 const { middleware: {ErrorHandler} } = require('u_egg_db_base')
 module.exports = ErrorHandler
 ```
 需要配置
-```/config/config.default.js
+`/config/config.default.js`
+```
 config.middleware = [ 'errorHandler' ];
 ```
 
 UserAuth 和 ErrorHandler一样，不过需要先配置好 `Cache`, 之后就可以ctx.request.user 获取当前用户  
 需要配置
-```/config/config.default.js
+`/config/config.default.js`
+```
 config.middleware = [ 'userAuth' ];
 config.userSessionSecret = 'xxxxxx'; //具体根据login系统的配置
 ```
@@ -145,14 +152,15 @@ config.userSessionSecret = 'xxxxxx'; //具体根据login系统的配置
 
 
 调用
-
-```/app/contoller/agent.js
+`/app/contoller/agent.js`
+```
 const { contoller: { Agent } } = require('u_egg_db_base');
 module.exports = Agent;
 ```
 
-需要配置
-```/app/router.js
+需要配置  
+`/app/router.js`
+```
 module.exports = app => {
   const { router, controller } = app;
   const APIV1 = '/api/v1';
@@ -160,7 +168,8 @@ module.exports = app => {
 };
 ```
 配置model和系统的关系
-```/config/config.default.js
+`/config/config.default.js`
+```
 config.model = {
   support: 'support',
   phone: 'user',
@@ -175,14 +184,15 @@ config.model = {
 + async logout()
 
 调用
-
-```/app/contoller/base.js
+`/app/contoller/base.js`
+```
 const { contoller: { Base } } = require('u_egg_db_base');
 module.exports = Base;
 ```
 
 需要配置
-```/app/router.js
+`/app/router.js`
+```
 module.exports = app => {
   const { router, controller } = app;
   const APIV1 = '/api/v1';
@@ -197,7 +207,8 @@ module.exports = app => {
 ### DB 层系统
 
 #### core 调用
-```/app/controller/works.js
+`/app/controller/works.js`
+```
 const { core: { BaseController } } = require('u_egg_db_base');
 class WorkController extends BaseController {
 
@@ -215,8 +226,8 @@ class WorkController extends BaseController {
 
 module.exports = WorkController;
 ```
-
-```/app/service/works.js
+`/app/service/works.js`
+```
 const { core: { BaseService } } = require('u_egg_db_base');
 class WorkService extends BaseService {
 
@@ -234,7 +245,10 @@ module.exports = WorkService;
 
 
 #### test 调用
-```/test/app/controller/works.test.js
+
+
+`/test/app/controller/works.test.js`
+```
 const { test: BaseControllerTest } = require('u_egg_db_base')
 const { assert, app } = require('egg-mock/bootstrap');
 const baseUrl = '/api/v1/works';
@@ -266,7 +280,9 @@ describe(baseUrl, () => {
 });
 ```
 
-```/test/app/service/works.test.js
+
+`/test/app/service/works.test.js`
+```
 const { test: BaseServiceTest } = require('u_egg_db_base')
 const { app } = require('egg-mock/bootstrap');
 const assert = require('assert-extends');
