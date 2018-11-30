@@ -16,6 +16,10 @@ const ErrorHandler = require('./lib/middleware/error_handler');
 const UserAuth = require('./lib/middleware/user_auth');
 
 module.exports = {
+  BaseControllerTest, //兼容旧版本
+  BaseServiceTest,//兼容旧版本
+  BaseService,//兼容旧版本
+  BaseController, //兼容旧版本
   test: {
     BaseControllerTest,
     BaseServiceTest,
