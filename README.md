@@ -103,6 +103,12 @@ exports.redis = {
 + getData(result)
 
 调用
+`/app/service/api.js`
+```
+const { service: { ApiService } } = require('u_egg_db_base');
+module.exports = ApiService;
+```
+
 `/app/service/ActionToken.js`
 ```
 'use strict';
@@ -117,6 +123,18 @@ class EmailService extends ApiService {
 
 module.exports = EmailService;
 ```
+
+需要配置 `Cache` 和 `ActionToken`
+`/config/config.default.js`
+```
+config.system = {
+    appid: 'xxxxxxxx',
+    secret: 'xxxxxxxxxxxxxxxxxxxxxxxx',
+  };
+config.serverPath = 'http://server.xxxx.com';
+```
+
+
 
 #### middleware 调用
 ErrorHandler
@@ -158,7 +176,7 @@ const { contoller: { Agent } } = require('u_egg_db_base');
 module.exports = Agent;
 ```
 
-需要配置  
+需要配置  `ApiService`  
 `/app/router.js`
 ```
 module.exports = app => {
