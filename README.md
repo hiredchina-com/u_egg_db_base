@@ -67,8 +67,8 @@ exports.jwt = {
 调用
 `/app/service/cache.js`
 ```
-const { service: { ActionToken } } = require('u_egg_db_base');
-module.exports = ActionToken;
+const { service: { Cache } } = require('u_egg_db_base');
+module.exports = Cache;
 ```
 
 需要配置  
