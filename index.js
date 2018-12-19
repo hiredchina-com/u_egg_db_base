@@ -14,6 +14,8 @@ const Base = require('./lib/contoller/base');
 
 const ErrorHandler = require('./lib/middleware/error_handler');
 const UserAuth = require('./lib/middleware/user_auth');
+const I18n = require('./lib/middleware/i18n_handler');
+
 
 module.exports = {
   BaseControllerTest, //兼容旧版本
@@ -39,6 +41,7 @@ module.exports = {
   },
   middleware: {
     ErrorHandler,
-    UserAuth
+    UserAuth,
+    I18n
   }
 }

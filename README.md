@@ -149,11 +149,21 @@ module.exports = ErrorHandler
 config.middleware = [ 'errorHandler' ];
 ```
 
+
 UserAuth 和 ErrorHandler一样，不过需要先配置好 `Cache`, 之后就可以ctx.request.user 获取当前用户  
 需要配置
 `/config/config.default.js`
 ```
 config.middleware = [ 'userAuth' ];
+config.userSessionSecret = 'xxxxxx'; //具体根据login系统的配置
+```
+
+
+I18n 和 ErrorHandler一样，不过需要先配置好 `Cache`, 还有`user`的service, 之后就可以ctx.request.lan 获取当前用户的I18n，以及在请求参数上带有query 带有`lan`的时候同步更新用户的默认I18n.
+需要配置
+`/config/config.default.js`
+```
+config.middleware = [ 'userAuth', 'i18nHandler' ];  // 注意 i18nHandler一定要在userAuth 之后
 config.userSessionSecret = 'xxxxxx'; //具体根据login系统的配置
 ```
 
