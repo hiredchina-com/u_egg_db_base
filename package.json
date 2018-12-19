@@ -28,6 +28,7 @@
     "eslint": "^5.9.0"
   },
   "dependencies": {
-    "egg": "^2.14.1"
+    "egg": "^2.14.1",
+    "util_react_web": "0.0.7"
   }
 }
