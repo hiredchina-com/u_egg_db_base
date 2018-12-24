@@ -8,9 +8,11 @@ const BaseController = require('./lib/core/baseController');
 const ActionToken = require('./lib/service/actionToken');
 const ApiService = require('./lib/service/api');
 const Cache = require('./lib/service/cache');
+const Qn = require('./lib/service/qn');
 
 const Agent = require('./lib/contoller/agent');
 const Base = require('./lib/contoller/base');
+const Upload = require('./lib/contoller/upload');
 
 const ErrorHandler = require('./lib/middleware/error_handler');
 const UserAuth = require('./lib/middleware/user_auth');
@@ -33,11 +35,13 @@ module.exports = {
   service: {
     ActionToken,
     ApiService,
-    Cache
+    Cache,
+    Qn
   },
   contoller: {
     Agent,
-    Base
+    Base,
+    Upload
   },
   middleware: {
     ErrorHandler,
