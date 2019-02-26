@@ -1,6 +1,6 @@
 {
   "name": "u_egg_db_base",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "Egg RESTfulAPI base",
   "main": "index.js",
   "scripts": {
