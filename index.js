@@ -9,6 +9,9 @@ const ActionToken = require('./lib/service/actionToken');
 const ApiService = require('./lib/service/api');
 const Cache = require('./lib/service/cache');
 const Qn = require('./lib/service/qn');
+const I18nService = require('./lib/service/i18n');
+const Setting = require('./lib/service/setting');
+const System = require('./lib/service/system');
 
 const Agent = require('./lib/contoller/agent');
 const Base = require('./lib/contoller/base');
@@ -36,7 +39,10 @@ module.exports = {
     ActionToken,
     ApiService,
     Cache,
-    Qn
+    Qn,
+    I18nService,
+    Setting,
+    System
   },
   contoller: {
     Agent,
