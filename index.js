@@ -12,6 +12,7 @@ const Qn = require('./lib/service/qn');
 const I18nService = require('./lib/service/i18n');
 const Setting = require('./lib/service/setting');
 const System = require('./lib/service/system');
+const Webapi = require('./lib/service/webapi');
 
 const Agent = require('./lib/contoller/agent');
 const Base = require('./lib/contoller/base');
@@ -20,6 +21,7 @@ const Upload = require('./lib/contoller/upload');
 const ErrorHandler = require('./lib/middleware/error_handler');
 const UserAuth = require('./lib/middleware/user_auth');
 const I18n = require('./lib/middleware/i18n_handler');
+
 
 
 module.exports = {
@@ -42,7 +44,8 @@ module.exports = {
     Qn,
     I18nService,
     Setting,
-    System
+    System,
+    Webapi
   },
   contoller: {
     Agent,
